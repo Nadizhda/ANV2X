@@ -27,7 +27,7 @@ rqamp=[];
 
 rialpha(1:2,:) = 0; 
 
-%% Dopller Parameters
+%% Doppler Parameters
 
 f_c= 5.9; 
 
