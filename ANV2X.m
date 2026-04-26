@@ -2,12 +2,7 @@
 % 1- import sys
 % 2- sys.excutable
 % %%% add the path to the MATLAB codes 
-%  3- pyenv('Version', '/Users/Nadine/Untitled Folder/my_env/bin/python')
-%  to  update the SCIPY
-% username = getenv('Nadine');
-% pe=pyenv('Version',"/Users/Nadine/Untitled Folder/my_env/bin/python",...
-% 'ExecutionMode','InProcess'...  --- this (old mode) works OK
-% py.importlib.import_module('numpy')
+%  3- pyenv('Version', '.../python')
 % The system model for the adaptive subcarrier spacing and Tg using
 % Jakes model for signal envelope simulation of Rayleigh fading
 % clc
@@ -114,8 +109,6 @@ MCS = 2;
 
 Aenvl=[];
 
-
-BER =[];
 
 
 pd = makedist('normal','mu',tau_max);
