@@ -401,7 +401,7 @@ for i= 1: length(fD)
            % SCS and T_g as an optimization variables for the frequency
            % based oprimization function 
 
-            B(m,:) = double(pyrunfile("ANV2X_SCS.py","f_result")); %% Update the python file name 
+            B(m,:) = double(pyrunfile("ANV2X_SCIPY.py","f_result")); %% Update the python file name 
 
             Result(i, fr+1,m,:) = [B(m,1), B(m,6)];
         end
@@ -449,11 +449,10 @@ for i= 1: length(fD)
        % numerology and we update the frame index 
 
        MU_matrix(i,fr+1) = Mu;
-       
-       BER(i,fr+1) = sum(ber)/length(ber) ;
 
-       % j=j+1;
-       % snr_li(i,fr+1,1:sz2) = SINR2/(sz2*N_iter);
+
+        j=j+1;
+       snr_li(i,fr+1,1:sz2) = SINR2/(sz2*N_iter);
 
   end
 
