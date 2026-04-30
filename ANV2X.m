@@ -172,7 +172,7 @@ for i= 1: length(fD)
           % adaptive 
           scs_n =An(i,fr,2);
 
-          Tg = An(i,fr,6); % [Mod_data, ~] =   OFDM_test(data_symb,scs_n,Tg);
+          Tg = An(i,fr,6); % [Mod_data, ~] =   OFDM_test(data_symb,scs_n,Tg); %% IFFT modulation
 
           [ mode_symb,~,N_SC,scs_n,L_c,T_ds,Ts_n] = OFDM_adaptive(data_symb, scs_n,Tg);
 
@@ -334,8 +334,8 @@ for i= 1: length(fD)
             % Then apply the SINR function to evaluate the change in the SINR
 
             Chann_signal1= reshape(Chann_signal, [sz,sz2]);
-            % OFDM demodulation
             
+            % OFDM demodulation 
             rceiv_symbol= OFDM_demo(Chann_signal1,L,N_SCS(Mu+1),L_c);
 
             % adaptive scheme use M+1=j
