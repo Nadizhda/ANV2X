@@ -158,6 +158,7 @@ for i= 1: length(fD)
    % fr is the resource set index
    % AvEnv= zeros()
    for fr = 0 : R_set
+      % Non-Adaptive
        if fr== 0
            N_SC= N_SCS(1); % NFFT size
            scs_n=scs(1); % subcarrier spacing
