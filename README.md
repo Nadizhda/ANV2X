@@ -1,5 +1,5 @@
 ANV2x is an adaptive numerology technique that relies on the Jakes spectrum to model the waveform design concerning the subcarrier spacing and the guard interval.
-The ANV2X_scipy.py is adopted by the ANV2X.mat to set the alpha and beta values.
+The ANV2X_scipy.py is adopted by the ANV2X.m to set the alpha and beta values.
 The python file adopts the resulting Doppler, the Delay parameters, including maximum delay and rms.
 These parameters are written on a text file, that is read by the python file.
 Running the matlab file, will dynamically run the python file to test and evaluate the transmitted signal at each given parameters,
