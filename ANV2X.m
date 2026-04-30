@@ -319,7 +319,7 @@ for i= 1: length(fD)
             % In this place, I have to estimate the correct doppler shift
           
 
-            % Doppler Effect function based on Reference [12], You can ue the theoritical Doppler  
+            % Doppler Effect function based on Reference [12
             % 
             % Delta_f(i,fr+1,:) = Doppler_Est(N_SC,noise_var,Ts_d,Chann_signal,tau_max,f_c,L_c);
             % 
@@ -434,12 +434,6 @@ for i= 1: length(fD)
        % ach_rate (i,ii)= rau * (log2(1+ real(abs(i,ii,:)))); to combare
        %  with the obtained 
        % result1(i,ii) = An(ii,:);
-
-       % To Make Sure that we will have a set of reosurce grid less
-       % than a threshold within one second 
-       % We conside this threshold as 100
-       % We consider the each frame index is related to the
-       % numerology and we update the frame index 
 
        MU_matrix(i,fr+1) = Mu;
 
