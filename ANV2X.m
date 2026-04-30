@@ -172,7 +172,7 @@ for i= 1: length(fD)
           % adaptive 
           scs_n =An(i,fr,2);
 
-          Tg = An(i,fr,6); % [Mod_data, ~] =   OFDM_test(data_symb,scs_n,Tg); %% IFFT modulation
+          Tg = An(i,fr,6); % [Mod_data, ~] =   OFDM_test(data_symb,scs_n,Tg); 
 
           [ mode_symb,~,N_SC,scs_n,L_c,T_ds,Ts_n] = OFDM_adaptive(data_symb, scs_n,Tg);
 
