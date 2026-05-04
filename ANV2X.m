@@ -295,14 +295,13 @@ for i= 1: length(fD)
             Rcvd = ri+1j*rq; 
         
             % Add the more fading to the signal 
-                         
-            
+            % shadwing and blockage and other fading things to be updated here as an additional fading          
             h=1/sqrt(2)*(randn(sz,sz2)+1j*randn(sz,sz2));
         
             %One tap channel estimation 
             h_x=[];
 
-            h_x(:,:)=  reshape(h,1,[]); %(:)*ones(1,sz2); % shadwing and blockage and other fading things 
+            h_x(:,:)=  reshape(h,1,[]); %(:)*ones(1,sz2); 
 
             H_x= OFDM_test(h_x,N_SC,L_c);
 
@@ -310,7 +309,7 @@ for i= 1: length(fD)
                 
             Noise = noise_var*sqrt(N0/2)*(randn(1,sz*sz2)+ 1j*randn(1,sz*sz2));
             
-            N_noise = OFDM_test(Noise,N_SC,L_c);
+            N_noise = FFT(Noise, N_SC); %% FFT for the noise based on the selected numerology.
 
             h_x= reshape(h_x, 1,[]);
 
@@ -349,8 +348,8 @@ for i= 1: length(fD)
             meen = meen+ sum(r)/(length(t)-1);
             
         end
-%%%%%%%%% ANV2X %%%%%%%%%%
-        I=[];
+     %%%%%%%%% ANV2X %%%%%%%%%%
+     I=[];
         delt_f(i)= fD(i)+ Delta_f(i,fr+1,1);
         epsilon(i,fr+1)= delt_f(i)/scs_n;
         b1= exp(1j*pi*epsilon(i,fr+1)*(N_SC-1)/N_SC) ;
@@ -359,7 +358,7 @@ for i= 1: length(fD)
             for ik=1:length (Chann_signal)
                 c1= sin(pi*(ik-lk+(delt_f(i)/scs_n)))/(N_SC*sin(pi*(ik-lk+(delt_f(i)/N_SC*scs_n))));
                 if lk~=ik
-                    Ik =Ik +abs(Chann_signal(ik)*H_x(1,ik))*exp(1j*(ik-lk)*(N_SC-1)/N_SC)*c1;
+                    Ik =Ik +abs(Chann_signal(ik)*Chann_signal(ik))*exp(1j*(ik-lk)*(N_SC-1)/N_SC)*c1;
                 end
             end
 
@@ -395,7 +394,7 @@ for i= 1: length(fD)
            % SCS and T_g as an optimization variables for the frequency
            % based oprimization function 
 
-            B(m,:) = double(pyrunfile("ANV2X_SCIPY.py","f_result")); %% Update the python file name 
+            B(m,:) = double(pyrunfile("ANV2X_SCIPY.py","f_result"); %% Update the python file name 
 
             Result(i, fr+1,m,:) = [B(m,1), B(m,6)];
         end
