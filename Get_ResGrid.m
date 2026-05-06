@@ -5,8 +5,6 @@
 % This function should be implemented in the clutster memebers 
 % To be implemented based on fuzzy logic system 
 % aver_Rvel is teh average relative velocity 
-% rho the density of the vehilces 
-% function output = Get_ResGrid (aver_Rvel ,rho,Mu)
 function output = Get_ResGrid (Mu,TF,Bw)
 %  C_ID will be used to get the resource grid configuration based on the
 %  average veloity and the density of vehilces 
