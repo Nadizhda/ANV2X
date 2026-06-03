@@ -73,7 +73,7 @@ noise_var = 10.^(-SNR/10);
 
 N0 = 1;
 
-N_iter=5;
+N_iter=100;
 
 A1=[];
 
@@ -253,7 +253,7 @@ for i= 1: length(fD)
 
         meen=0;
         %%%%%%%%%% Start transmission using Jakes spectrum under Montecarlo Simulations
-        for k=1:N_iter
+        for k=1:
            
             SINR2=[];
     
