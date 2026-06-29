@@ -319,13 +319,13 @@ for i= 1: length(fD)
             % In this place, I have to estimate the correct doppler shift
           
 
-            % Doppler Effect function based on Reference [12
-            % 
-            % Delta_f(i,fr+1,:) = Doppler_Est(N_SC,noise_var,Ts_d,Chann_signal,tau_max,f_c,L_c);
-            % 
+            % Doppler Effect function based on Reference [12]
+             
+             Delta_f(i,fr+1,:) = Doppler_Est(N_SC,noise_var,Ts_d,Chann_signal,tau_max,f_c,L_c);
+            
             % Delta_f(isnan(Delta_f))=fD(i) ;
-
-            Delta_f(i,fr+1,:) = [abs(randn(1))* fD(i),0]; % Only based on random number upperbounded
+            % Direct estimation if Refrence [12] is not adopted. 
+            % Delta_f(i,fr+1,:) = [abs(randn(1))* fD(i),0]; % Only based on random number upperbounded
     
             % check the optimization problem with respect to the current setings
             % after writing the data to a text file
