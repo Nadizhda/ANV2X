@@ -253,7 +253,7 @@ for i= 1: length(fD)
 
         meen=0;
         %%%%%%%%%% Start transmission using Jakes spectrum under Montecarlo Simulations
-        for k=1:
+        for k=N_iter:
            
             SINR2=[];
     
